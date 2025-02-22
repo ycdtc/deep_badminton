@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羽毛球比赛配对系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 主页面 -->
+    <div class="container" id="mainPage">
+        <header>
+            <h1>🏸 参赛选手列表 🏸</h1>
+        </header>
+        
+        <div class="add-player-form">
+            <h2>添加新选手</h2>
+            <div class="form-group">
+                <input type="text" id="playerName" placeholder="选手姓名" required>
+                <select id="playerGender" required>
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+                <input type="number" id="playerLevel" placeholder="等级" min="1" max="6" step="0.5" required>
+                <button class="btn add-btn" onclick="addPlayer()">添加选手</button>
+            </div>
+        </div>
+
+        <div class="players-grid" id="playersGrid">
+            <!-- Players will be inserted here by JavaScript -->
+        </div>
+
+        <div class="buttons">
+            <button class="btn start-btn" onclick="startMatching()">✏️ 开始匹配</button>
+        </div>
+    </div>
+
+    <!-- 偏好设置页面 -->
+    <div class="container" id="preferencesPage" style="display: none;">
+        <header>
+            <h1>⚙️ 偏好设置 ⚙️</h1>
+        </header>
+
+        <div class="preferences-section basic-settings">
+            <h2>🎮 基本设置</h2>
+            <div class="appearances-setting">
+                <label for="totalAppearances">每位选手参赛次数：</label>
+                <div class="number-input">
+                    <button type="button" onclick="decreaseAppearances()">-</button>
+                    <input type="number" id="totalAppearances" value="8" min="1" max="20">
+                    <button type="button" onclick="increaseAppearances()">+</button>
+                </div>
+            </div>
+
+            <div class="match-settings">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="prefBalancedMode" checked>
+                    <span class="checkbox-text">势均力敌模式</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="prefTwoCourts" checked>
+                    <span class="checkbox-text">两个场</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="prefAvoidMixedGender" checked>
+                    <span class="checkbox-text">不出现男双对女双</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="preferences-section">
+            <h2>❌ 不期望出现的双打组合</h2>
+            <div class="pair-list" id="hatersList">
+                <!-- 不期望的组合将在这里显示 -->
+            </div>
+            <div class="add-pair">
+                <select id="hater1"></select>
+                <select id="hater2"></select>
+                <button class="btn add-btn" onclick="addHaterPair()">+ 添加</button>
+            </div>
+        </div>
+
+        <div class="preferences-section">
+            <h2>✨ 期望多出现的双打组合</h2>
+            <div class="pair-list" id="goodPairsList">
+                <!-- 期望的组合将在这里显示 -->
+            </div>
+            <div class="add-pair">
+                <select id="good1"></select>
+                <select id="good2"></select>
+                <button class="btn add-btn" onclick="addGoodPair()">+ 添加</button>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn confirm-btn" onclick="savePreferences()">确认</button>
+            <button class="btn cancel-btn" onclick="togglePreferences()">取消</button>
+        </div>
+    </div>
+
+    <!-- 对阵安排页面 -->
+    <div class="container" id="matchupsPage" style="display: none;">
+        <header>
+            <h1>🏸 对阵安排 🏸</h1>
+        </header>
+
+        <div id="matchupsContainer">
+            <!-- 对阵安排将在这里显示 -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

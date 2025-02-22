@@ -1,0 +1,307 @@
+.preferences-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.preferences-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.pair-list {
+    margin-bottom: 15px;
+}
+
+.pair-item {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.pair-item .player-avatars {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.pair-item .player-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: -8px;
+    border: 2px solid white;
+}
+
+.pair-item .player-names {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.pair-item .delete-pair {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.pair-item .delete-pair:hover {
+    opacity: 1;
+}
+
+.add-pair {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.add-pair select {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 50px;
+}
+
+.add-pair select option {
+    padding: 12px;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.add-pair button {
+    height: 50px;
+    padding: 12px 24px;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.preferences-container select {
+    padding: 8px 12px;
+    font-size: 16px;
+    height: 40px;  
+    min-width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.preferences-container select option {
+    font-size: 16px;
+    padding: 8px;
+}
+
+.preferences-container button {
+    height: 40px;  
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.confirm-btn {
+    background: #2196f3;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: block;
+    margin: 20px auto;
+}
+
+.confirm-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* 红色和绿色标记 */
+.preferences-section:first-of-type {
+    border-left: 4px solid #ff4444;
+}
+
+.preferences-section:nth-of-type(2) {
+    border-left: 4px solid #4caf50;
+}
+
+/* 基本设置样式 */
+.basic-settings {
+    border-left: 4px solid #2196f3 !important;
+}
+
+.appearances-setting {
+    margin-bottom: 20px;
+}
+
+.appearances-setting label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.number-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 200px;
+}
+
+.number-input button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #e3f2fd;
+    color: #2196f3;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.number-input button:hover {
+    background: #bbdefb;
+}
+
+.number-input input {
+    width: 80px;
+    height: 36px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.number-input input:focus {
+    outline: none;
+    border-color: #2196f3;
+}
+
+.match-settings {
+    margin-top: 20px;
+}
+
+.match-settings .checkbox-container {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.match-settings .checkbox-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.match-settings .checkbox-text {
+    color: #333;
+    font-size: 14px;
+}
+
+.pair-list .pair {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.pair-list .pair .avatars {
+    display: flex;
+    align-items: center;
+}
+
+.pair-list .pair .avatars img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: -10px;  /* 让头像重叠 */
+    border: 2px solid white;  /* 添加白色边框 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* 添加阴影效果 */
+}
+
+.pair-list .pair .avatars img:last-child {
+    margin-right: 0;  /* 最后一个头像不需要负margin */
+}
+
+/* 移动端样式 */
+@media screen and (max-width: 768px) {
+    .pair-list .pair .avatars img {
+        width: 50px;  /* 手机上稍微大一点 */
+        height: 50px;
+    }
+    .add-pair {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .add-pair select {
+        width: 100%;
+        font-size: 24px;
+        height: 60px;
+        padding: 15px;
+    }
+
+    /* 重要：增加选项的大小 */
+    .add-pair select,
+    .add-pair select option,
+    .add-pair select.form-control option {
+        font-size: 24px !important;
+        height: 60px !important;
+        line-height: 60px !important;
+        padding: 10px !important;
+    }
+
+    .add-pair button {
+        width: 100%;
+        font-size: 24px;
+        height: 60px;
+        padding: 15px;
+    }
+
+    /* 确保下拉框在手机上显示正确 */
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #fff url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") no-repeat right 12px top 50%;
+        background-size: 12px auto;
+        padding-right: 30px !important;
+    }
+}
+
+.pair-item .player-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: -5px;  
+    border: 2px solid white;  
+}
+
+.pair-item .player-names {
+    flex-grow: 1;
+    font-size: 14px;
+    margin-left: 15px;  
+}

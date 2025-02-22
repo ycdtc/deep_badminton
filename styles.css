@@ -1,0 +1,724 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #0088ff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* 主页面样式 */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.player-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.player-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    border: 4px solid white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.player-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.gender-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+.gender-male {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.gender-female {
+    background-color: #fce4ec;
+    color: #d81b60;
+}
+
+.level-badge {
+    background-color: #fff3e0;
+    color: #f57c00;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.settings {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.checkbox-container {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.checkbox-text {
+    margin-left: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.start-btn {
+    background: linear-gradient(45deg, #ff4081, #ff6b6b);
+    color: white;
+}
+
+.settings-btn {
+    background: #2196f3;
+    color: white;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+/* 偏好设置页面样式 */
+.preferences-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.basic-settings {
+    border-left: 4px solid #2196f3 !important;
+}
+
+.preferences-section:nth-of-type(2) {
+    border-left: 4px solid #ff4444;
+}
+
+.preferences-section:nth-of-type(3) {
+    border-left: 4px solid #4caf50;
+}
+
+.preferences-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.appearances-setting {
+    margin-bottom: 20px;
+}
+
+.appearances-setting label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.number-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 200px;
+}
+
+.number-input button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #e3f2fd;
+    color: #2196f3;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.number-input button:hover {
+    background: #bbdefb;
+}
+
+.number-input input {
+    width: 80px;
+    height: 36px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.number-input input:focus {
+    outline: none;
+    border-color: #2196f3;
+}
+
+.match-settings {
+    margin-top: 20px;
+}
+
+.match-settings .checkbox-container {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.match-settings .checkbox-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.pair-list {
+    margin-bottom: 15px;
+}
+
+.pair-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.pair-separator {
+    color: #dc3545;
+    font-size: 32px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.player-pair {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.player-avatars {
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+.player-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    margin-right: -16px;
+}
+
+.player-names {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.player-names span {
+    font-size: 14px;
+    color: #333;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #dc3545;
+    padding: 4px;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.remove-btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* 对阵页面样式 */
+.round-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.round-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #ffd700;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.matches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.match-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.match-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.match-number {
+    font-size: 14px;
+    color: #666;
+    background: #e9ecef;
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+.match-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.team-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.team-power {
+    font-size: 14px;
+    color: #666;
+    padding: 4px 12px;
+    background: #e9ecef;
+    border-radius: 4px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.team-players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.player-avatars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.player-avatars img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.player-names {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.player-names span {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    min-width: 48px;
+}
+
+.match-score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-width: 120px;
+    justify-content: center;
+}
+
+.match-score span {
+    color: #999;
+    margin: 0 5px;
+}
+
+/* 偏好设置页面的特定样式 */
+.preferences-section .player-avatars {
+    margin-bottom: -10px;
+}
+
+.preferences-section .player-names {
+    margin-bottom: -10px;
+}
+
+/* 不期望组合的样式 */
+.pair-item .pair-separator {
+    color: #dc3545;
+}
+
+/* 期望组合的样式 */
+.good-pair {
+    background-color: #f0f7ff;
+}
+
+.good-pair .pair-separator {
+    color: #ffc107;
+}
+
+.good-pair .remove-btn {
+    color: #666;
+}
+
+/* 添加新选手表单样式 */
+.add-player-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.add-player-form h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2196f3;
+}
+
+.add-btn {
+    background: #4caf50;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.add-btn:hover {
+    background: #45a049;
+}
+
+/* 确认按钮样式 */
+.confirm-btn {
+    background: linear-gradient(135deg, #2196F3, #1565C0);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.confirm-btn:hover {
+    background: linear-gradient(135deg, #1E88E5, #0D47A1);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+    transform: translateY(-1px);
+}
+
+.confirm-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+/* 基础响应式设置 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .round-container {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .match-item {
+        padding: 15px;
+    }
+
+    .match-content {
+        gap: 20px;
+    }
+
+    .player-avatars img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .match-score {
+        font-size: 24px;
+        padding: 8px 15px;
+        min-width: 80px;
+    }
+}
+
+/* 手机端布局 */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .round-container {
+        padding: 12px;
+        margin: 12px 0;
+    }
+
+    .round-title {
+        font-size: 16px;
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    .match-item {
+        padding: 12px;
+    }
+
+    .match-content {
+        gap: 10px;
+    }
+
+    .team-container {
+        gap: 10px;
+    }
+
+    .team-power {
+        font-size: 12px;
+        padding: 3px 8px;
+        min-width: 80px;
+    }
+
+    .player-avatars {
+        gap: 5px;
+    }
+
+    .player-avatars img {
+        width: 32px;
+        height: 32px;
+        border-width: 2px;
+    }
+
+    .player-names {
+        gap: 10px;
+    }
+
+    .player-names span {
+        font-size: 12px;
+        min-width: 32px;
+    }
+
+    .match-score {
+        font-size: 20px;
+        padding: 6px 10px;
+        min-width: 60px;
+    }
+
+    .match-number {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+}
+
+/* 超小屏幕布局 */
+@media screen and (max-width: 360px) {
+    .match-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .team-container {
+        width: 100%;
+    }
+
+    .match-score {
+        order: 2;
+    }
+
+    .player-avatars img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .player-names span {
+        font-size: 13px;
+    }
+
+    .team-power {
+        min-width: 100px;
+    }
+}
+
+/* 确保所有页面都有基础的响应式布局 */
+@media screen and (max-width: 768px) {
+    .players-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .player-card {
+        padding: 15px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group button {
+        width: 100%;
+    }
+
+    .preferences-section {
+        padding: 15px;
+    }
+
+    .add-pair {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .add-pair select,
+    .add-pair button {
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+}
